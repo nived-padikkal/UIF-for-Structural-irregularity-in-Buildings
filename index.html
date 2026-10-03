@@ -41,14 +41,14 @@ header{
 .title h1{
   font-family: "Cooper Black","CooperBlack","Georgia",serif;
   color:#c45a00;
-  font-size:28px;
+  font-size:32px;
   line-height:1.1;
 }
 
 .title p{
   font-family: "Cooper Black","CooperBlack","Georgia",serif;
   color:#c45a00;
-  font-size:14px;
+  font-size:17px;
   font-weight:bold;
 }
 
@@ -57,6 +57,7 @@ nav a{
   text-decoration:none;
   font-weight:bold;
   color:#000;
+  font-size:19px;
   cursor:pointer;
   font-family: Calibri, Arial, sans-serif;
 }
@@ -84,24 +85,24 @@ main{
 /* TEXT BLOCKS */
 .text-block{
   color:#1f4aa5;
-  font-size:17px;
-  line-height:1.7;
+  font-size:21px;
+  line-height:1.75;
   text-align:justify;
-  max-width:1020px;
+  max-width:1100px;
   margin:10px auto 18px auto;
   font-weight:bold;
 }
 
 
 .steps{
-  max-width:900px;
+  max-width:1000px;
   margin:10px auto 35px auto;
-  font-size:17px;
+  font-size:21px;
   color:#1f4aa5;
   font-family: Calibri, Arial, sans-serif;
 }
 .steps b{
-  font-size:18px;
+  font-size:23px;
   font-weight:800;
 }
 .steps ol{
@@ -110,6 +111,9 @@ main{
   line-height:1.6;
   font-weight:bold;
 }
+
+.text-block a{color:#1f4aa5;text-decoration:underline;word-break:break-all;}
+.text-block a:hover{color:#163b8f;}
 
 /* DOWNLOAD */
 .download-btn{
@@ -120,7 +124,8 @@ main{
 .download-btn a{
   background:#1f4aa5;
   color:#fff;
-  padding:10px 20px;
+  padding:12px 26px;
+  font-size:19px;
   text-decoration:none;
   border-radius:5px;
   font-weight:bold;
@@ -157,7 +162,8 @@ main{
   padding:18px;
   text-align:center;
   font-weight:bold;
-  line-height:1.55;
+  font-size:19px;
+  line-height:1.6;
   font-family: Calibri, Arial, sans-serif;
 }
 
@@ -168,7 +174,8 @@ footer{
   background:#4a6fd3;
   color:#000;
   text-align:center;
-  padding:10px;
+  padding:12px;
+  font-size:16px;
   font-weight:bold;
   font-family: Calibri, Arial, sans-serif;
 }
@@ -209,13 +216,13 @@ footer{
   }
 
   .text-block{
-    font-size:15.5px;
+    font-size:18px;
     text-align:left;
     margin:10px auto 15px auto;
   }
 
   .steps{
-    font-size:15.5px;
+    font-size:18px;
   }
 
   .contact-card{
@@ -228,7 +235,7 @@ footer{
   }
 
   .contact-info{
-    font-size:14.5px;
+    font-size:16.5px;
   }
 }
 </style>
@@ -263,25 +270,40 @@ footer{
 
     
     <div class="text-block">
-      During an earthquake, failure starts from the weakest points that arise due to the
-      irregularities in the structure. The Unified Identification Factor (UIF) is a simplified
-      approach for the identification and quantification of structural irregularity in
-      buildings. The aim is to reduce the complexity associated with the numerous
-      parameters and criteria for the seismic analysis and design of irregular buildings.
+      During an earthquake, failure starts at the weakest points caused by structural
+      irregularities. Seismic design standards worldwide emphasise the importance of avoiding
+      building irregularities through careful architectural planning and structural
+      configurations. However, the complexity of codal guidelines and frequent
+      revisions/amendments often tempt designers to ignore the irregularity checks during the
+      design stage.
+    </div>
+
+    <div class="text-block">
+      The Unified Identification Factor (UIF) is a simplified approach for the identification
+      and quantification of structural irregularity in buildings. The aim is to reduce the
+      complexity associated with the numerous parameters and criteria for the seismic analysis
+      and design of irregular buildings.
+    </div>
+
+    <div class="text-block">
+      Further details of UIF can be found in the published paper,
+      <a href="https://doi.org/10.12989/smm.2024.11.2.101" target="_blank" rel="noopener">https://doi.org/10.12989/smm.2024.11.2.101</a>.
     </div>
 
     
     <div class="text-block">
-      A Python code has been developed to integrate the calculation of UIF in the
-      structural analysis software ETABS. The final output of the code is an interactive 3D
-      model which displays the UIF values for different columns of the building.
+      An algorithm has been developed in Python to integrate UIF into the structural analysis
+      software ETABS. The final output of the code is an interactive 3D plot that displays the
+      UIF values for different columns and highlights the columns with the maximum and minimum
+      UIF. A downloadable Excel facilitates further analysis of the axial forces, tributary
+      areas and UIF values.
     </div>
 
     <div class="steps">
-      <b>Steps:</b>
+      <b>Steps to follow:</b>
       <ol>
-        <li>Open ETABS model and run analysis for 1.5 (DL + LL) combination</li>
-        <li>Run Python code</li>
+        <li>Open ETABS model and run analysis for the 1.5 (DL + SDL + LL) combination</li>
+        <li>Run the Python code</li>
       </ol>
 
       <div class="download-btn">

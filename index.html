@@ -19,6 +19,8 @@ body{
 
 html{scroll-behavior:smooth;}
 #home-page,#contact-page{scroll-margin-top:110px;}
+#contact-page{display:none;}
+#contact-page.show{display:block;}
 
 .section-title{
   font-family: "Cooper Black","CooperBlack","Georgia",serif;
@@ -26,8 +28,7 @@ html{scroll-behavior:smooth;}
   font-size:30px;
   text-align:center;
   margin:20px 0 10px 0;
-  border-top:2px solid #ccc;
-  padding-top:30px;
+  padding-top:10px;
 }
 
 
@@ -266,8 +267,8 @@ footer{
   </div>
 
   <nav>
-    <a href="#home-page">Home</a>
-    <a href="#contact-page">Contact</a>
+    <a href="#home-page" id="nav-home">Home</a>
+    <a href="#contact-page" id="nav-contact">Contact</a>
   </nav>
 </header>
 
@@ -292,24 +293,24 @@ footer{
     </div>
 
     <div class="text-block">
-      The Unified Identification Factor (UIF) is a simplified approach for the identification
+      The Unified Identification Factor (<i>UIF</i>) is a simplified approach for the identification
       and quantification of structural irregularity in buildings. The aim is to reduce the
       complexity associated with the numerous parameters and criteria for the seismic analysis
       and design of irregular buildings.
     </div>
 
     <div class="text-block">
-      Further details of UIF can be found in the published paper,
+      Further details of <i>UIF</i> can be found in the published paper,
       <a href="https://doi.org/10.12989/smm.2024.11.2.101" target="_blank" rel="noopener">https://doi.org/10.12989/smm.2024.11.2.101</a>.
     </div>
 
     
     <div class="text-block">
-      An algorithm has been developed in Python to integrate UIF into the structural analysis
+      An algorithm has been developed in Python to integrate <i>UIF</i> into the structural analysis
       software ETABS. The final output of the code is an interactive 3D plot that displays the
-      UIF values for different columns and highlights the columns with the maximum and minimum
-      UIF. A downloadable Excel facilitates further analysis of the axial forces, tributary
-      areas and UIF values.
+      <i>UIF</i> values for different columns and highlights the columns with the maximum and minimum
+      <i>UIF</i>. A downloadable Excel facilitates further analysis of the axial forces, tributary
+      areas and <i>UIF</i> values.
     </div>
 
     <div class="steps">
@@ -345,7 +346,7 @@ footer{
       <div class="contact-card">
         <div class="contact-img"><img src="person2.jpg"></div>
         <div class="contact-info">
-          Ms. Akshara S.P.<br>
+          Ms. Akshara S. P.<br>
           Research Scholar<br>
           Department of Civil Engineering<br>
           National Institute of Technology Calicut<br>
@@ -375,5 +376,21 @@ footer{
 
 
 
+<script>
+const homePage=document.getElementById('home-page');
+const contactPage=document.getElementById('contact-page');
+document.getElementById('nav-contact').addEventListener('click',function(e){
+  e.preventDefault();
+  homePage.style.display='none';
+  contactPage.classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+document.getElementById('nav-home').addEventListener('click',function(e){
+  e.preventDefault();
+  contactPage.classList.remove('show');
+  homePage.style.display='';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
 </body>
 </html>

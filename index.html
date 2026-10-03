@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UIF Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Calibri, "Calibri Light", Arial, sans-serif;
+  background:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  border-bottom:1px solid #ccc;
+  padding:12px 45px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo-wrap{display:flex;align-items:center;gap:16px;}
+
+.logo-img{
+  width:65px;
+  height:auto;
+}
+
+
+.title h1{
+  font-family: "Cooper Black","CooperBlack","Georgia",serif;
+  color:#c45a00;
+  font-size:28px;
+  line-height:1.1;
+}
+
+.title p{
+  font-family: "Cooper Black","CooperBlack","Georgia",serif;
+  color:#c45a00;
+  font-size:14px;
+  font-weight:bold;
+}
+
+nav a{
+  margin-left:22px;
+  text-decoration:none;
+  font-weight:bold;
+  color:#000;
+  cursor:pointer;
+  font-family: Calibri, Arial, sans-serif;
+}
+
+main{
+  flex:1;
+  padding:35px 35px 20px 35px; 
+  max-width:1250px;
+  margin:auto;
+}
+
+.hero-rectangle{
+  display:flex;
+  justify-content:center;
+  margin:15px 0 8px 0;
+}
+
+.hero-rectangle img{
+  width:720px; 
+  max-width:95%;
+  height:auto;
+  border-radius:5px;
+}
+
+/* TEXT BLOCKS */
+.text-block{
+  color:#1f4aa5;
+  font-size:17px;
+  line-height:1.7;
+  text-align:justify;
+  max-width:1020px;
+  margin:10px auto 18px auto;
+  font-weight:bold;
+}
+
+
+.steps{
+  max-width:900px;
+  margin:10px auto 35px auto;
+  font-size:17px;
+  color:#1f4aa5;
+  font-family: Calibri, Arial, sans-serif;
+}
+.steps b{
+  font-size:18px;
+  font-weight:800;
+}
+.steps ol{
+  margin-top:10px;
+  margin-left:28px;
+  line-height:1.6;
+  font-weight:bold;
+}
+
+/* DOWNLOAD */
+.download-btn{
+  display:flex;
+  justify-content:center;
+  margin-top:15px;
+}
+.download-btn a{
+  background:#1f4aa5;
+  color:#fff;
+  padding:10px 20px;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:bold;
+  transition:0.3s;
+  font-family: Calibri, Arial, sans-serif;
+}
+.download-btn a:hover{background:#163b8f;}
+
+/* CONTACT */
+.contact-container{
+  max-width:820px;
+  margin:40px auto;
+  border:1px solid #444;
+}
+.contact-card{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  border-bottom:1px solid #444;
+}
+.contact-card:last-child{border-bottom:none;}
+.contact-img{
+  border-right:1px solid #444;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px;
+}
+.contact-img img{
+  width:105px;
+  height:125px;
+  object-fit:cover;
+}
+.contact-info{
+  padding:18px;
+  text-align:center;
+  font-weight:bold;
+  line-height:1.55;
+  font-family: Calibri, Arial, sans-serif;
+}
+
+
+footer{
+  position:sticky;
+  bottom:0;
+  background:#4a6fd3;
+  color:#000;
+  text-align:center;
+  padding:10px;
+  font-weight:bold;
+  font-family: Calibri, Arial, sans-serif;
+}
+
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:8px;
+    padding:12px 18px;
+  }
+
+  .logo-wrap{
+    flex-direction:row;
+    justify-content:center;
+    text-align:center;
+  }
+
+  nav{
+    margin-top:6px;
+  }
+
+  nav a{
+    margin:0 10px;
+  }
+
+  main{
+    padding:18px 14px 15px 14px;
+  }
+
+  .hero-rectangle{
+    margin:12px 0 6px 0;
+  }
+
+  .hero-rectangle img{
+    width:100%;
+  }
+
+  .text-block{
+    font-size:15.5px;
+    text-align:left;
+    margin:10px auto 15px auto;
+  }
+
+  .steps{
+    font-size:15.5px;
+  }
+
+  .contact-card{
+    grid-template-columns:1fr;
+  }
+
+  .contact-img{
+    border-right:none;
+    border-bottom:1px solid #444;
+  }
+
+  .contact-info{
+    font-size:14.5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <img src="uif_logo.png" class="logo-img" alt="UIF Logo">
+    <div class="title">
+      <h1>Unified Identification Factor</h1>
+      <p>(A single parameter for all structural irregularities)</p>
+    </div>
+  </div>
+
+  <nav>
+    <a onclick="showHome()">Home</a>
+    <a onclick="showContact()">Contact</a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  
+  <div id="home-page">
+
+    
+    <div class="hero-rectangle">
+      <img src="structure_grouped.png" alt="UIF Structural Model">
+    </div>
+
+    
+    <div class="text-block">
+      During an earthquake, failure starts from the weakest points that arise due to the
+      irregularities in the structure. The Unified Identification Factor (UIF) is a simplified
+      approach for the identification and quantification of structural irregularity in
+      buildings. The aim is to reduce the complexity associated with the numerous
+      parameters and criteria for the seismic analysis and design of irregular buildings.
+    </div>
+
+    
+    <div class="text-block">
+      A Python code has been developed to integrate the calculation of UIF in the
+      structural analysis software ETABS. The final output of the code is an interactive 3D
+      model which displays the UIF values for different columns of the building.
+    </div>
+
+    <div class="steps">
+      <b>Steps:</b>
+      <ol>
+        <li>Open ETABS model and run analysis for 1.5 (DL + LL) combination</li>
+        <li>Run Python code</li>
+      </ol>
+
+      <div class="download-btn">
+        <a href="UIF_18.11.2025.py" download>⬇ Download UIF Python</a>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div id="contact-page" style="display:none;">
+    <div class="contact-container">
+
+      <div class="contact-card">
+        <div class="contact-img"><img src="person1.jpg"></div>
+        <div class="contact-info">
+          Dr. M. Abdul Akbar<br>
+          Assistant Professor<br>
+          Department of Civil Engineering<br>
+          National Institute of Technology Calicut<br>
+          Email: maa@nit.ac.in
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-img"><img src="person2.jpg"></div>
+        <div class="contact-info">
+          Ms. Akshara S.P.<br>
+          Research Scholar<br>
+          Department of Civil Engineering<br>
+          National Institute of Technology Calicut<br>
+          Email: akshara027@gmail.com
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-img"><img src="person3.jpg"></div>
+        <div class="contact-info">
+          Dr. T. M. Madhavan Pillai<br>
+          Professor (HAG)<br>
+          Department of Civil Engineering<br>
+          National Institute of Technology Calicut<br>
+          Email: mpillai@nitc.ac.in
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 • Unified Identification Factor • All Rights Reserved
+</footer>
+
+<script>
+function showHome(){
+  document.getElementById('home-page').style.display='block';
+  document.getElementById('contact-page').style.display='none';
+}
+
+function showContact(){
+  document.getElementById('home-page').style.display='none';
+  document.getElementById('contact-page').style.display='block';
+}
+</script>
+
+</body>
+</html>

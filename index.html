@@ -17,6 +17,19 @@ body{
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
+html{scroll-behavior:smooth;}
+#home-page,#contact-page{scroll-margin-top:110px;}
+
+.section-title{
+  font-family: "Cooper Black","CooperBlack","Georgia",serif;
+  color:#c45a00;
+  font-size:30px;
+  text-align:center;
+  margin:20px 0 10px 0;
+  border-top:2px solid #ccc;
+  padding-top:30px;
+}
+
 
 header{
   position:sticky;
@@ -253,8 +266,8 @@ footer{
   </div>
 
   <nav>
-    <a onclick="showHome()">Home</a>
-    <a onclick="showContact()">Contact</a>
+    <a href="#home-page">Home</a>
+    <a href="#contact-page">Contact</a>
   </nav>
 </header>
 
@@ -314,7 +327,8 @@ footer{
   </div>
 
   
-  <div id="contact-page" style="display:none;">
+  <div id="contact-page">
+    <h2 class="section-title">Contact</h2>
     <div class="contact-container">
 
       <div class="contact-card">
@@ -359,17 +373,7 @@ footer{
   © 2026 • Unified Identification Factor • All Rights Reserved
 </footer>
 
-<script>
-function showHome(){
-  document.getElementById('home-page').style.display='block';
-  document.getElementById('contact-page').style.display='none';
-}
 
-function showContact(){
-  document.getElementById('home-page').style.display='none';
-  document.getElementById('contact-page').style.display='block';
-}
-</script>
 
 </body>
 </html>
